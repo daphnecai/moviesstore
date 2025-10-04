@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-3">Start a Movie Petition</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit Petition</button>
+    <a href="{% url 'petitions:list' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}
